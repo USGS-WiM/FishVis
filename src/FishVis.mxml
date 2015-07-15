@@ -32,7 +32,7 @@
 	xmlns:localControls="controls.*"
 	xmlns:navigationClasses="com.esri.ags.controls.navigationClasses.*"
  	creationComplete="setup()"
-    pageTitle="Fish Vis Mapper" 
+    pageTitle="FishVis Mapper" 
     layout="absolute" >
     
     <fx:Style source="assets/styles/main.css"/>
