@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 06.18.12- NE - Created. -->
+<wim:WiMInfoWindow xmlns:fx="http://ns.adobe.com/mxml/2009" 
+				   xmlns:s="library://ns.adobe.com/flex/spark" 
+				   xmlns:mx="library://ns.adobe.com/flex/mx" 
+				   xmlns:esri="http://www.esri.com/2008/ags"
+				   xmlns:osmf="http://ns.adobe.com/osmf"
+				   xmlns:wim="gov.usgs.wim.controls.*" 
+				   xmlns:localControls="controls.*"
+				   title="{(data.GNIS_NAME) == '' ? data.COMID : data.GNIS_NAME}" minWidth="225"
+				   creationComplete="componentLoad()">
+	
+	<fx:Style source="assets/styles/main.css"/>
+	
+	<fx:Script>
+		<![CDATA[
+			import com.adobe.serialization.json.JSON;
+			import com.esri.ags.FeatureSet;
+			import com.esri.ags.Graphic;
+			import com.esri.ags.geometry.Extent;
+			import com.esri.ags.utils.GraphicUtil;
+			
+			import flash.net.*;
+			
+			import mx.charts.DateTimeAxis;
+			import mx.charts.HitData;
+			import mx.charts.events.ChartItemEvent;
+			import mx.charts.series.LineSeries;
+			import mx.collections.ArrayCollection;
+			import mx.collections.IList;
+			import mx.collections.ItemResponder;
+			import mx.collections.Sort;
+			import mx.collections.SortField;
+			import mx.collections.XMLListCollection;
+			import mx.controls.Alert;
+			import mx.core.FlexGlobals;
+			import mx.core.UIComponent;
+			import mx.events.CloseEvent;
+			import mx.events.CollectionEvent;
+			import mx.events.FlexEvent;
+			import mx.events.IndexChangedEvent;
+			import mx.events.ItemClickEvent;
+			import mx.events.SliderEvent;
+			import mx.messaging.management.ObjectName;
+			import mx.rpc.AsyncResponder;
+			import mx.rpc.AsyncToken;
+			import mx.rpc.events.FaultEvent;
+			import mx.rpc.events.ResultEvent;
+			import mx.rpc.http.HTTPService;
+			import mx.utils.ArrayUtil;
+			import mx.utils.ObjectProxy;
+			import mx.utils.ObjectUtil;
+			import mx.utils.object_proxy;
+			
+			import spark.events.IndexChangeEvent;
+			//import mx.rpc.http.mxml.HTTPService;
+			
+			protected function componentLoad():void
+			{
+				zoomToFeaturesOnMap.addEventListener(MouseEvent.CLICK, zoomToFeatures);
+				zoomToFeaturesOnMap.visible = true;
+				zoomToFeaturesOnMap.includeInLayout = true;
+			}
+			
+			protected function zoomToFeatures(event):void {
+				var graphicProvider:ArrayCollection = FlexGlobals.topLevelApplication.queryGraphicsLayer.graphicProvider as ArrayCollection;
+				var graphicsExtent:Extent = GraphicUtil.getGraphicsExtent(graphicProvider.toArray());
+				FlexGlobals.topLevelApplication.map.extent = graphicsExtent.expand(3.1);
+			}
+			
+			protected function infoFault(info:Object, token:Object = null):void
+			{
+				Alert.show(info.toString());
+			} 
+			
+			private function queryFault(info:Object, token:Object = null):void
+			{
+				Alert.show(info.toString());
+			} 
+			
+		]]>
+	</fx:Script>
+	
+	<mx:VBox id="streamInfoBox" color="black" backgroundColor="0xDDDDDD" horizontalScrollPolicy="off" borderStyle="solid"
+			 paddingBottom="10" paddingLeft="5" paddingRight="5" paddingTop="5" width="100%">
+		<mx:HBox paddingLeft="0" horizontalGap="0">
+			<mx:VBox id="streamInfoMain" height="{streamInfoBox.height}" verticalAlign="middle" width="100%" horizontalAlign="center" color="black" includeInLayout="true" paddingTop="0" paddingBottom="0" paddingLeft="0" paddingRight="0">
+				<s:VGroup>
+					<s:HGroup>
+						<s:Label text="HUC 12: " />
+						<s:Label text="{data.HUC_12}" />
+					</s:HGroup>
+					
+					<s:Label text="Stream temperature responses" fontWeight="bold" />
+					<s:VGroup paddingLeft="10">
+						<s:HGroup>
+							<s:Label text="July mean: " />
+							<s:Label text="{data.JulyMean}" />
+						</s:HGroup>
+						<s:HGroup>
+							<s:Label text="Thermal class current: " />
+							<s:Label text="{data.ThermNow}" />
+						</s:HGroup>
+						<s:HGroup>
+							<s:Label text="Thermal class future (2046 - 2065): " />
+							<s:Label text="{data.ThermFutr}" />
+						</s:HGroup>
+					</s:VGroup>
+					
+					<s:Label text="Individual species predictions" fontWeight="bold" />	
+					<s:VGroup paddingLeft="10">
+						<s:HGroup>
+							<s:Label text="Brook Trout: " />
+							<s:Label text="{data.BkTrout}" />
+						</s:HGroup>
+						<s:HGroup>
+							<s:Label text="Brown Trout: " />
+							<s:Label text="{data.BrwnTrout}" />
+						</s:HGroup>
+						<s:HGroup>
+							<s:Label text="Mottled Sculpin: " />
+							<s:Label text="{data.MtSculpin}" />
+						</s:HGroup>
+						<s:HGroup>
+							<s:Label text="Rainbow Trout: " />
+							<s:Label text="{data.RbTrout}" />
+						</s:HGroup>
+						<s:HGroup>
+							<s:Label text="Blackchin Shiner: " />
+							<s:Label text="{data.BlackChin}" />
+						</s:HGroup>
+						<s:HGroup>
+							<s:Label text="Brook Stickleback: " />
+							<s:Label text="{data.BkStickleB}" />
+						</s:HGroup>
+						<s:HGroup>
+							<s:Label text="Northern Hogsucker: " />
+							<s:Label text="{data.NHogSucker}" />
+						</s:HGroup>
+						<s:HGroup>
+							<s:Label text="Northern Pike: " />
+							<s:Label text="{data.NthnPike}" />
+						</s:HGroup>
+						<s:HGroup>
+							<s:Label text="White Sucker: " />
+							<s:Label text="{data.WhSucker}" />
+						</s:HGroup>
+						<s:HGroup>
+							<s:Label text="Common Carp: " />
+							<s:Label text="{data.ComCarp}" />
+						</s:HGroup>
+						<s:HGroup>
+							<s:Label text="Green Sunfish: " />
+							<s:Label text="{data.GreenSunF}" />
+						</s:HGroup>
+						<s:HGroup>
+							<s:Label text="Iowa Darter: " />
+							<s:Label text="{data.IowaDarter}" />
+						</s:HGroup>
+						<s:HGroup>
+							<s:Label text="Smallmouth Bass: " />
+							<s:Label text="{data.SmBass}" />
+						</s:HGroup>
+						<s:HGroup>
+							<s:Label text="Stonecat: " />
+							<s:Label text="{data.StoneCat}" />
+						</s:HGroup>
+					</s:VGroup>
+				</s:VGroup>
+			</mx:VBox>
+			<!--<mx:TabNavigator id="fishVisTabs" color="black" width="580" height="525" paddingLeft="0"> 
+				<mx:HBox id="streamTempResponses" label="Stream temperature responses" width="100%" height="100%">
+					
+				</mx:HBox>
+				<mx:Box id="fishSummary" label="Fish summary">
+					
+				</mx:Box>
+				<mx:VBox id="fishSpeciesResponses" label="Fish species responses" styleName="siteContain" width="100%" height="100%">
+					
+				</mx:VBox>
+				<mx:VBox id="streamflow" label="Streamflow" styleName="siteContain" >
+				
+				</mx:VBox>
+				<mx:VBox id="climateProjections" label="Climate projections" paddingBottom="10" paddingLeft="10" paddingRight="10" horizontalAlign="left" styleName="siteContain" >
+					
+				</mx:VBox>
+			</mx:TabNavigator>-->
+		</mx:HBox>
+	</mx:VBox>
+</wim:WiMInfoWindow>
