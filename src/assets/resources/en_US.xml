@@ -28,7 +28,7 @@
   	<resource name="roadStreamsCache" value="http://50.17.205.92:6080/ArcGIS/rest/services/FishVis/roads_stream_crossing_cache/MapServer" />
   	
   	<!-- non wim hosted resources -->
-  	<resource name="padusUrl" value="http://dingo.gapanalysisprogram.com/ArcGIS/rest/services/PADUS/PADUS_owner_Name/MapServer/" />
+  	<resource name="padusUrl" value="http://gis1.usgs.gov/arcgis/rest/services/gap/PADUS_Owner/MapServer" />
   	<resource name="landCover2006Url" value="http://raster.nationalmap.gov/ArcGIS/rest/services/TNM_LandCover/MapServer/" />
   	<resource name="disturbanceUrl" value="http://gis1.usgs.gov/arcgis/rest/services/nfhap/nfhap_scores_tiled_huc12_PROD/MapServer/" />
   </resourceBundle>
