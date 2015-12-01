@@ -32,7 +32,7 @@
 	xmlns:localControls="controls.*"
 	xmlns:navigationClasses="com.esri.ags.controls.navigationClasses.*"
  	creationComplete="setup()"
-    pageTitle="FishVis Mapper" 
+    pageTitle="FishVis Mapper"
     layout="absolute" >
     
     <fx:Style source="assets/styles/main.css"/>
@@ -397,6 +397,11 @@
 					updateEnd="layerUpdateComp(padus)"
 					alpha="0.65"
 					url="{resourceManager.getString('urls', 'padusUrl')}" >
+					<esri:visibleLayers>
+						<s:ArrayCollection>
+							<fx:Number>0</fx:Number>
+						</s:ArrayCollection>
+					</esri:visibleLayers>
 				</esri:ArcGISDynamicMapServiceLayer>
 				<esri:ArcGISDynamicMapServiceLayer
 					id="landCover2006"
@@ -1360,7 +1365,8 @@
 							<localControls:MapServiceLegend id="catchmentsLegend" map="{map}" serviceLayer="{catchments}" legendWidth="245" needsUpdates="false" />
 							<localControls:MapServiceLegend id="huc12Legend" map="{map}" serviceLayer="{huc12s}" legendWidth="245" needsUpdates="false" />
 							<localControls:MapServiceLegend id="roadAndStreamLegend" map="{map}" serviceLayer="{roadAndStreamCrossings}" legendWidth="245" needsUpdates="false" />
-							<mx:Image id="padusLegend" source="./assets/images/PAD_US_explanation.png" visible="{padus.visible}" includeInLayout="{padus.visible}"/>
+							<!--<mx:Image id="padusLegend" source="./assets/images/PAD_US_explanation.png" visible="{padus.visible}" includeInLayout="{padus.visible}"/>-->
+							<localControls:MapServiceLegend id="padusLegend" map="{map}" serviceLayer="{padus}" legendTitle="Public land ownership (PAD-US)" legendWidth="245" needsUpdates="false" />
 							<localControls:MapServiceLegend id="landCoverLegend" map="{map}" serviceLayer="{landCover2006}" legendTitle="Land use/land cover (NLCD 2001)" legendWidth="245" needsUpdates="false" />
 							<localControls:MapServiceLegend id="disturbanceLegend" map="{map}" serviceLayer="{disturbance}" legendTitle="Disturbance (HUC12 level)" legendFilter="{['Not Scored / Unavailable at this scale','Very Low','Low','Moderate','High','Very High']}" legendWidth="245" needsUpdates="false" />
 						</s:VGroup>
@@ -1413,7 +1419,7 @@
 															 moreInfoToolTip="More information in 'Restoring Aquatic Ecosystem Connectivity Requires Expanding Inventories of Both Dams and Road Crossings'. Click the ? for more information."
 															 clickURL="http://dx.doi.org/10.1890/120168"
 															 selected="{roadAndStreamCrossings.visible}" creationComplete="{ roadAndStreamToggle.selected=false; }" />
-									<wimControls:LayerToggle id="padusToggle" layerID="2" serviceLayerID="padus" layerTitle="Conservation status (PAD-US)" 
+									<wimControls:LayerToggle id="padusToggle" layerID="0" serviceLayerID="padus" layerTitle="Public land ownership (PAD-US)" 
 															 opacBoxBGColor="0x444444" openOpacityRight="true" opacityBoxAlpha="0.9"
 															 moreInfoToolTip="Created as part of the USGS Gap Analysis Program, the Protected Areas Database of the United States (PAD-US) illustrates and describes public land ownership, management and conservation lands nationally, including voluntarily provided privately protected areas."
 															 selected="{padus.visible}" creationComplete="{ padusToggle.selected=false; }"/>
