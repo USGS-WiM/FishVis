@@ -447,9 +447,9 @@ import spark.events.IndexChangeEvent;
 							if (hucFishResponseAbsFutureSelect.selectedItem == "Miles of fish occurrence") {
 								responseCodeSuff = "PPAP";
 							} if (hucFishResponseAbsFutureSelect.selectedItem == "Miles lost") {
-								responseCodeSuff = "AP";
-							} if (hucFishResponseAbsFutureSelect.selectedItem == "Miles gained") {
 								responseCodeSuff = "PA";
+							} if (hucFishResponseAbsFutureSelect.selectedItem == "Miles gained") {
+								responseCodeSuff = "AP";
 							} if (hucFishResponseAbsFutureSelect.selectedItem == "Miles unchanged") {
 								responseCodeSuff = "PP";
 							} if (hucFishResponseAbsFutureSelect.selectedItem == "Miles lost or gained") {
@@ -461,9 +461,9 @@ import spark.events.IndexChangeEvent;
 							if (hucFishResponsePercentFutureSelect.selectedItem == "Miles of fish occurrence (percent)") {
 								responseCodeSuff = "PPAP";
 							} if (hucFishResponsePercentFutureSelect.selectedItem == "Miles lost (percent)") {
-								responseCodeSuff = "AP";
-							} if (hucFishResponsePercentFutureSelect.selectedItem == "Miles gained (percent)") {
 								responseCodeSuff = "PA";
+							} if (hucFishResponsePercentFutureSelect.selectedItem == "Miles gained (percent)") {
+								responseCodeSuff = "AP";
 							} if (hucFishResponsePercentFutureSelect.selectedItem == "Miles unchanged (percent)") {
 								responseCodeSuff = "PP";
 							} if (hucFishResponsePercentFutureSelect.selectedItem == "Miles lost or gained (percent)") {
