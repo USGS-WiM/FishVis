@@ -549,7 +549,6 @@
 				<mx:Label text="{resourceManager.getString('ui.text', 'headerTitle')}" color="0x3f70b6" fontSize="28"/>
 				<mx:Label text="{resourceManager.getString('ui.text', 'headerSubTitle')}" fontWeight="bold" color="white" fontSize="28" 
 						  buttonMode="true" click="navigateToURL(new URLRequest(FlexGlobals.topLevelApplication.url), '_self')"/>
-				<mx:Label text="beta" color="gray" fontSize="20"/>
 			</mx:HBox>
 			<s:VGroup paddingTop="10" paddingRight="10" id="moreInfoIcon">
 				<s:BorderContainer
@@ -1445,7 +1444,7 @@
 	</s:VGroup>
 	
 	<!-- download button -->
-	<s:VGroup gap="0" horizontalAlign="right" top="5" right="395" useHandCursor="true" buttonMode="true">  <!--click="navigateToURL(new URLRequest('https://www.sciencebase.gov/catalog/item/53bc6018e4b084059e8c004c'))">-->
+	<s:VGroup gap="0" horizontalAlign="right" top="5" right="180" useHandCursor="true" buttonMode="true">  <!--click="navigateToURL(new URLRequest('https://www.sciencebase.gov/catalog/item/53bc6018e4b084059e8c004c'))">-->
 		<s:BorderContainer
 			id="download"
 			backgroundColor="0xDC8739"
@@ -1462,7 +1461,7 @@
 	<!-- end download button -->
 	
 	<!-- fishvis model limitation button -->
-	<s:VGroup gap="5" horizontalAlign="right" top="5" right="180" useHandCursor="true" buttonMode="true">
+	<!--<s:VGroup gap="5" horizontalAlign="right" top="5" right="180" useHandCursor="true" buttonMode="true">
 		<s:BorderContainer
 			id="modelLimits"
 			backgroundColor="0x3f70b6"
@@ -1475,14 +1474,14 @@
 				<s:Label text="FishVis model limitations" fontSize="14" color="white" />
 			</s:HGroup>
 		</s:BorderContainer>
-	</s:VGroup>
+	</s:VGroup>-->
 	<!-- end fishvis model limitation button -->
 	
 	<!-- Download Link Box -->
 	<s:BorderContainer 
 		id="downloadInfo"
 		top="45"
-		right="395"
+		right="180"
 		backgroundColor="white" 
 		borderColor="black"
 		cornerRadius="0"
@@ -1500,9 +1499,9 @@
 					<mx:htmlText>
 						<![CDATA[
 						<font size='12' color='#000000'>
-						<p>The entire FishVis dataset is available for download. Spatial data is provided as a file geodatabase, and 
-						associated metadata is provided in an Excel file. <font size='12' color='#3f70b6'><b><a target='_blank' href='https://www.sciencebase.gov/catalog/item/5113e594e4b0a9ee4115bb08'>Click here</a></b></font> to access the download site.</p>
-						
+						<p>FishVis data are available for download as a file geodatabase along with Federal Geographic Data Committee (FGDC) 
+						metadata. <font size='12' color='#3f70b6'><b><a target='_blank' href='https://www.sciencebase.gov/catalog/item/5113e594e4b0a9ee4115bb08'>Click here</a></b></font> to access 
+						and download the data through the USGS Science Base catalog.</p>
 						]]>
 					</mx:htmlText> <!--   -->
 				</mx:Text>
@@ -1619,10 +1618,7 @@
 						]]>
 					</mx:htmlText>
 				</mx:Text>
-				<s:HGroup paddingBottom="10">
-					<mx:Image source="./assets/images/wim_logo.png" useHandCursor="true" buttonMode="true" mouseChildren="false" toolTip="Wisconsin Internet Mapping" click="navigateToURL(new URLRequest('http://wi.water.usgs.gov/wim/index.html'))" />					
-				</s:HGroup>
-				</mx:VBox>
+			</mx:VBox>
 		</s:VGroup>			
 		
 	</s:BorderContainer>
