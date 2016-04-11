@@ -546,7 +546,10 @@
 		<mx:HBox id="header" color="white" backgroundColor="black" borderStyle="solid" borderColor="black" cornerRadius="5" top="5" left="5" paddingTop="5" paddingBottom="5" paddingLeft="5" paddingRight="5"> 
 			<mx:Image id="headerLogo" source="{resourceManager.getString('ui.graphics', 'headerLogo')}" useHandCursor="true" buttonMode="true" mouseChildren="false" toolTip="{resourceManager.getString('ui.text', 'headerFooterLinks')}" click="showUSGSPopUpBox(event, 'headerFooterLinkBox')"/>
 			<mx:HBox backgroundColor="black" width="100%" paddingLeft="5" paddingRight="10" paddingTop="5" verticalGap="0" fontFamily="Arial" >
-				<mx:Label text="{resourceManager.getString('ui.text', 'headerTitle')}" color="0x3f70b6" fontSize="28"/>
+				<mx:HBox paddingRight="-5">
+					<mx:Label text="{resourceManager.getString('ui.text', 'headerTitle')}" color="0x3f70b6" fontSize="28"/>
+				</mx:HBox>
+				<mx:Image source="./assets/images/help_tip.png" toolTip="Climate Change Visualization and Integration of Ecological and Watershed Resources"></mx:Image>
 				<mx:Label text="{resourceManager.getString('ui.text', 'headerSubTitle')}" fontWeight="bold" color="white" fontSize="28" 
 						  buttonMode="true" click="navigateToURL(new URLRequest(FlexGlobals.topLevelApplication.url), '_self')"/>
 			</mx:HBox>
