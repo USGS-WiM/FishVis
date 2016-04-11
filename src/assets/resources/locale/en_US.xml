@@ -42,7 +42,7 @@
   <!-- UI text -->
   <resourceBundle name="ui.text">
   	<!--  Application Titles -->
-  	<resource name="headerTitle" value="CCVIEWeR:"/>
+  	<resource name="headerTitle" value="CCVIEWeR"/>
     <resource name="headerSubTitle" value="FishVis"/>
     <!-- Component Text -->
     <resource name="geocodeSearchButtonText" value="Find"/>
