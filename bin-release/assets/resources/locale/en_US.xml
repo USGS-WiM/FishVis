@@ -25,7 +25,7 @@
   	<resource name="supplementalLayersUrl" value="https://gis.wim.usgs.gov/ArcGIS/rest/services/FishVis/supplementalLayers/MapServer" />
   	<resource name="streamsCache" value="https://gis.wim.usgs.gov/ArcGIS/rest/services/FishVis/streams_cache/MapServer" />
   	<resource name="catchmentsCache" value="https://gis.wim.usgs.gov/ArcGIS/rest/services/FishVis/catchments_cache/MapServer" />
-  	<resource name="roadStreamsCache" value="https://gis.wim.usgs.gov/ArcGIS/rest/services/FishVis/roads_stream_crossing_cache/MapServer" />
+  	<resource name="roadStreamsCache" value="http://gis.wim.usgs.gov/ArcGIS/rest/services/FishVis/roads_stream_crossing_cache/MapServer" />
   	
   	<!-- non wim hosted resources -->
   	<resource name="padusUrl" value="https://gis1.usgs.gov/arcgis/rest/services/gap/PADUS_Owner/MapServer" />
