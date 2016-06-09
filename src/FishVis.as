@@ -403,7 +403,7 @@ import spark.events.IndexChangeEvent;
 							D_response = hucFutureStreamTempResponseSelect.selectedItem;
 						} else if (timePeriodCode == "T20F2") {
 							if (hucFutureStreamTempResponseSelect.selectedItem == "Thermal class (length-weighted)") {
-								layerName = "WSLJUTCXF2";
+								layerName = "WSLJTCXF2";
 								F_addInfo = "(July mean)";
 							} else if (hucFutureStreamTempResponseSelect.selectedItem == "Change in thermal class (length-weighted)") {
 								layerName = "WSTCCHXF2";
