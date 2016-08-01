@@ -550,8 +550,12 @@
 					<mx:Label text="{resourceManager.getString('ui.text', 'headerTitle')}" color="0x3f70b6" fontSize="28"/>
 				</mx:HBox>
 				<mx:Image source="./assets/images/help_tip.png" toolTip="Climate Change Visualization and Integration of Ecological and Watershed Resources"></mx:Image>
-				<mx:Label text="{resourceManager.getString('ui.text', 'headerSubTitle')}" fontWeight="bold" color="white" fontSize="28" 
+				<s:VGroup gap="0">
+					<mx:Label text="{resourceManager.getString('ui.text', 'headerSubTitle')}" fontWeight="bold" color="white" fontSize="28" 
 						  buttonMode="true" click="navigateToURL(new URLRequest(FlexGlobals.topLevelApplication.url), '_self')"/>
+					<mx:Label paddingTop="-5" text="{resourceManager.getString('ui.text', 'version')}" fontWeight="bold" color="0xDDDDDD" fontSize="12"/>
+				</s:VGroup>
+				
 			</mx:HBox>
 			<s:VGroup paddingTop="10" paddingRight="10" id="moreInfoIcon">
 				<s:BorderContainer

@@ -35,7 +35,7 @@
   
   <!-- UI graphics -->
   <resourceBundle name="ui.graphics">
-    <resource name="headerLogo" value="assets/images/lcc-logo_banner.png" />
+    <resource name="headerLogo" value="assets/images/usgsLogoSm.jpg" />
     <resource name="wimLogo" value="assets/images/wim_logo_sm_4c.gif" />    
   </resourceBundle>
   
@@ -44,6 +44,7 @@
   	<!--  Application Titles -->
   	<resource name="headerTitle" value="CCVIEWeR"/>
     <resource name="headerSubTitle" value="FishVis"/>
+    <resource name="version" value="Version 1.0"/>
     <!-- Component Text -->
     <resource name="geocodeSearchButtonText" value="Find"/>
     <resource name="geocodeSearchHintText" value="Type Address, Landmark, etc..." />
