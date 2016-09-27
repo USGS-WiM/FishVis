@@ -1507,7 +1507,7 @@
 						<![CDATA[
 						<font size='12' color='#000000'>
 						<p>FishVis data are available for download as a file geodatabase along with Federal Geographic Data Committee (FGDC) 
-						metadata. <font size='12' color='#3f70b6'><b><a target='_blank' href='https://www.sciencebase.gov/catalog/item/5113e594e4b0a9ee4115bb08'>Click here</a></b></font> to access 
+						metadata. <font size='12' color='#3f70b6'><b><a target='_blank' href='http://dx.doi.org/10.5066/F74T6GGG'>Click here</a></b></font> to access 
 						and download the data through the USGS Science Base catalog.</p>
 						]]>
 					</mx:htmlText> <!--   -->
@@ -1616,9 +1616,9 @@
 						</p><br/>
 						<p>The results presented here are not predictions of what will happen in the future so much as they are representations of what might happen given a set of assumptions about future energy development and use.
 						</p><br/>
-						<p>Complete information about the FishVis project and data are described in USGS Data Report XXXX-XXXX and available in <font color="#0000FF"><a href="https://www.sciencebase.gov/catalog/item/5113e594e4b0a9ee4115bb08" target="_blank">ScienceBase</a></font>. FishVis data can also be <font color="#0000FF"><a href="https://www.sciencebase.gov/catalog/item/5113e594e4b0a9ee4115bb08" target="_blank">downloaded</a></font> here.
+						<p>Complete information about the FishVis project and data are described in USGS Scientific Investigations Report 2016-5124 (<font color="#0000FF"><a href="http://dx.doi.org/10.3133/sir20165124" target="_blank">http://dx.doi.org/10.3133/sir20165124</a></font>) and can be downloaded from USGS ScienceBase-Catalog as part of the USGS FishVis data release, <font color="#0000FF"><a href="http://dx.doi.org/10.5066/F74T6GGG" target="_blank">http://dx.doi.org/10.5066/F74T6GGG</a></font>.
 						</p><br/>
-						<p><b>Acknowlegdements</b></p>
+						<p><b>Acknowledgements</b></p>
 						<p>The FishVis web-based decision support mapping application was developed by the USGS <font color="#0000FF"><a target="_blank" href="http://wim.usgs.gov">Wisconsin Internet Mapping</a></font> (WiM) team. Support for this project was provided by the <font color="#0000FF"><a href="http://greatlakeslcc.org/" target="_blank">Upper Midwest and Great Lakes Landscape Conservation Cooperative</a></font> of the U.S. Fish and Wildlife Service. The U.S. Geological Survey collaborated with Michigan State University, Michigan Institute of Fisheries Research, and the Wisconsin Department of Natural Resources. Additional support for this project was provided by the USGS National GAP Analysis Program, the Federal Aid in Sport Fish Restoration Project F-95-P (studies SSMP and SSCN), the National Fish Habitat Action Plan, and the USGS National Climate Change and Wildlife Science Center. </p>
 						<br/>
 						<br/>
