@@ -17,7 +17,7 @@
 
     "homepageURL": "https://ccviewer.wim.usgs.gov/FishVis",
     "downloadURL": "https://github.com/USGS-WiM/FishVis/archive/master.zip",
-    "disclaimerURL": "https://github.com/USGS-WiM/FishVis/blob/master/LICENSE.md",
+    "disclaimerURL": "https://github.com/USGS-WiM/FishVis/blob/master/DISCLAIMER.md",
     "repositoryUrl": "https://github.com/USGS-WiM/FishVis",
     "vcs": "git",
 
